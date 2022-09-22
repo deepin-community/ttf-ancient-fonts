@@ -1,0 +1,59 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+O=http://snapshot.debian.org/archive/debian/20110720T033111Z/pool/main/t/ttf-ancient-fonts/ttf-ancient-fonts_2.57.orig.tar.gz
+FO=$(lastword $(subst /, ,$O))
+DO=$(P)-obsolete.orig
+
+P=ttf-ancient-fonts
+V=2.60
+U=http://users.teilar.gr/~g1951d/
+Z=AbydosFont.zip \
+  AegeanFonts.zip \
+  Aegyptus.zip \
+  AkkadianAssyrian.zip \
+  Analecta.zip \
+  Anatolian.zip \
+  Maya.zip \
+  Musica.zip \
+  Symbola.zip \
+  TextfontsFonts.zip \
+  Unidings.zip \
+
+DN=$(P)-$(V).orig
+
+override_dh_install:
+	dh_install -pfonts-ancient-scripts -XSymbola
+	dh_install --remaining-packages
+
+get-orig-source:
+	wget -c $(O) -O $(FO)
+	mkdir -p $(DO)
+	tar zxf $(FO) -C $(DO) --strip-components=1
+	rm -f $(FO)
+	ls $(DO) | grep -o '^[A-Z][a-z]*' | uniq > $(DO)/list
+	for f in $(Z) ; do \
+		wget -c -O $$f $(U)$$f ; \
+		# Some files are duplicated so we need -o \
+		unzip -o -d $(DN) $$f ; \
+		rm -f $$f ; \
+	done
+	# We prefer UTF-8 LF text files, convert them using iconv, tr
+	find $(DN) -iname '*.txt' -print0 | xargs -0 -I_ sh -c "iconv -f UTF-16 -t UTF-8 _ | tr -d '\r' > _.tmp && mv _.tmp _"
+	# PDFs are produced using Microsoft Word and no
+	# Word files (source code) are published for them
+	# so we have to remove them as per DFSG item 2.
+	rm -f $(DN)/*.pdf $(DN)/*.doc* $(DN)/*.xls*
+	ls $(DN) | grep -o '^[A-Z][a-z]*' | uniq > $(DN)/list
+	diff=$$(cat $(DO)/list $(DN)/list | sort | uniq -u) ; \
+	for f in $$diff ; do \
+		for j in $(DO)/$$f*; do \
+			[ -e $$j ] && cp $$j $(DN) ; \
+		done || true ; \
+	done
+	rm -f $(DO)/list $(DN)/list
+	tar Jcf $(P)_$(V).orig.tar.xz $(P)-$(V).orig
+	rm -rf $(DO) $(DN)
+
+.PHONY: override_dh_install get-orig-source

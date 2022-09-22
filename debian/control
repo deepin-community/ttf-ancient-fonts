@@ -1,0 +1,75 @@
+Source: ttf-ancient-fonts
+Section: fonts
+Priority: extra
+Maintainer: Gürkan Myczko <gurkan@phys.ethz.ch>
+Uploaders: Debian Fonts Task Force <pkg-fonts-devel@lists.alioth.debian.org>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 4.0.0
+Homepage: http://users.teilar.gr/~g1951d/
+
+Package: ttf-ancient-fonts
+Architecture: all
+Section: oldlibs
+Depends: fonts-ancient-scripts, fonts-symbola, ${misc:Depends}
+Description: Unicode Fonts for Ancient Scripts (transitional package)
+ This dummy package is provided for a smooth transition from the
+ previous ttf-ancient-fonts package to the fonts-ancient-scripts package.
+ .
+ It may be safely removed after installation.
+
+Package: fonts-ancient-scripts
+Architecture: all
+Multi-Arch: foreign
+Replaces: ttf-ancient-fonts (<< 2.59)
+Breaks: ttf-ancient-fonts (<< 2.59)
+Provides: ttf-ancient-fonts
+Depends: ${misc:Depends}
+Description: Unicode Fonts for Ancient Scripts
+ These are free unicode fonts for Aegean Scripts, other ancient scripts in
+ the greater Aegean vicinity, Egyptian Hieroglyphs, Sumero-Akkadian Cuneiform,
+ and Musical Symbols in the Unicode Standard.
+ .
+ The fonts included are:
+ .
+  * Abydos
+  * Aegean
+  * Aegyptus
+  * Akkadian
+  * Alexander
+  * Alfios
+  * Anaktoria
+  * Analecta
+  * Anatolian
+  * Aroania
+  * Asea
+  * Assyrian
+  * Atavyros
+  * Avdira
+  * Cretan
+  * Cypro
+  * Gardiner
+  * Maya
+  * Musica
+  * Nilus
+  * Unidings
+
+Package: ttf-ancient-fonts-symbola
+Architecture: all
+Section: oldlibs
+Depends: fonts-symbola, ${misc:Depends}
+Description: symbolic font providing emoji chars from Unicode 9.0 (transit. pkg)
+ This dummy package is provided for a smooth transition from the
+ previous ttf-ancient-fonts-symbola package to the fonts-symbola package.
+ .
+ It may be safely removed after installation.
+
+Package: fonts-symbola
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Breaks: ttf-ancient-fonts-symbola (<< 2.59)
+Replaces: ttf-ancient-fonts-symbola (<< 2.59)
+Provides: ttf-ancient-fonts-symbola
+Description: symbolic font providing emoji characters from Unicode 9.0
+ This package includes the Symbola font, which contains special symbols and
+ emoji characters which are encoded in the Unicode Standard 9.0

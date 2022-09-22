@@ -1,0 +1,109 @@
+ttf-ancient-fonts (2.60-1.1) unstable; urgency=medium
+
+  * Non maintainer upload by the Reproducible Builds team.
+  * No source change upload to rebuild on buildd with .buildinfo files.
+
+ -- Holger Levsen <holger@debian.org>  Sun, 27 Dec 2020 16:36:22 +0100
+
+ttf-ancient-fonts (2.60-1) unstable; urgency=medium
+
+  [ Gürkan Myczko ]
+  * New upstream release. (Closes: #840591)
+  * Bump standards version to 4.0.0.
+
+  [ Jonathan McDowell ]
+  * Move to priority extra rather than optional.
+  * Add Abydos font.
+  * Update source filenames for get-orig-source.
+
+ -- Gürkan Myczko <gurkan@phys.ethz.ch>  Fri, 30 Jun 2017 16:46:22 +0200
+
+ttf-ancient-fonts (2.59-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Update get-orig-source to recreate the tarball with obsolete fonts.
+  * Update the font names to the long description, add font version
+    information into the README (Closes: #759694).
+
+ -- Andrew Shadura <andrewsh@debian.org>  Sun, 08 Nov 2015 20:12:59 +0100
+
+ttf-ancient-fonts (2.58-2) unstable; urgency=medium
+
+  * Team upload.
+  * Fix a typo in the long description.
+  * Update the name of the maintainer.
+  * Update copyrights.
+
+ -- Andrew Shadura <andrewsh@debian.org>  Fri, 06 Nov 2015 12:46:50 +0100
+
+ttf-ancient-fonts (2.58-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release (Closes: #684496).
+  * Split the package into fonts-ancient-scripts and fonts-symbola
+    (Closes: #758444, LP: #1269017)
+  * Bump standards to 3.9.6.
+  * Bump debhelper version to 9.
+  * Update copyright years.
+  * Add font names to the long description.
+
+ -- Andrew Shadura <andrewsh@debian.org>  Wed, 04 Nov 2015 13:42:33 +0100
+
+ttf-ancient-fonts (2.57-1) unstable; urgency=low
+
+  * Team upload.
+  * New upstream release
+  * Drop defoma stuff, since it is unused and obsolete
+  * Switch to dh instead of long-style debhelper
+  * Add a dummy watch file indicating this is an aggregation package
+  * Add a get-orig-source target to generate tarball
+  * Font packages don't have ELF binaries, remove ${shlibs:Depends}
+
+ -- Paul Wise <pabs@debian.org>  Tue, 19 Jul 2011 21:51:57 +0200
+
+ttf-ancient-fonts (2.56-1) unstable; urgency=low
+
+  * New upstream version. (Closes: #562567)
+  * Bump standards version to 3.9.2.
+  * Bump debhelper version to 8.
+  * debian/copyright: updated the years.
+  * Switch to dpkg-source format version 3.0 (quilt).
+
+ -- Gürkan Sengün <gurkan@phys.ethz.ch>  Thu, 05 May 2011 14:51:32 +0200
+
+ttf-ancient-fonts (2.52-1) unstable; urgency=low
+
+  * New upstream version. (Closes: #550681)
+  * Bump debhelper version.
+  * Bump standards version.
+  * Change section to fonts.
+
+ -- Gürkan Sengün <gurkan@phys.ethz.ch>  Thu, 03 Dec 2009 12:56:51 +0100
+
+ttf-ancient-fonts (2.02-1) unstable; urgency=low
+
+  * New upstream version.
+  * Update my email address.
+
+ -- Gürkan Sengün <gurkan@phys.ethz.ch>  Thu, 12 Jun 2008 09:46:20 +0200
+
+ttf-ancient-fonts (2.01-1) unstable; urgency=low
+
+  * New upstream version.
+  * Added Debian Fonts Task Force to Uploaders.
+
+ -- Gürkan Sengün <gurkan@linuks.mine.nu>  Tue, 15 Jan 2008 11:49:59 +0100
+
+ttf-ancient-fonts (1.0-2) unstable; urgency=low
+
+  * debian/control: Updated standards version.
+  * debian/copyright: Updated according to webpage.
+
+ -- Gürkan Sengün <gurkan@linuks.mine.nu>  Thu, 06 Dec 2007 15:15:34 +0100
+
+ttf-ancient-fonts (1.0-1) unstable; urgency=low
+
+  * Initial release. (Closes: #452526)
+
+ -- Gürkan Sengün <gurkan@linuks.mine.nu>  Mon, 26 Nov 2007 12:13:25 +0100
