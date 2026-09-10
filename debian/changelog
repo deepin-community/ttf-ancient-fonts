@@ -1,3 +1,9 @@
+ttf-ancient-fonts (2.60-1.2) unstable; urgency=medium
+
+  * Rebuild with LTO enabled (dpkg vendor feature optimize/lto).
+
+ -- tunaichao <tunaichao@uniontech.com>  Thu, 10 Sep 2026 21:02:03 +0800
+
 ttf-ancient-fonts (2.60-1.1) unstable; urgency=medium
 
   * Non maintainer upload by the Reproducible Builds team.
